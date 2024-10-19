@@ -1,87 +1,22 @@
-let btn = document.querySelectorAll('.num');
-let currentInput = '';
-let operation = null;
-let previousInput = '';
+const display = document.querySelector('.display');
 
-
-let display = document.querySelector('.display');
-
-
-function updateDisplay() {
-    display.value = currentInput;
+function appendToDisplay(input){
+    display.value += input;
     
 }
 
-function handleNumberClick(event) {
-    currentInput += event.target.textContent;
-    updateDisplay();
+function clearDisplay(){
+    display.value = "";
 }
 
-function handleOperationClick(event) {
-    
-    if (currentInput === '') return;
-    if (previousInput !== '') {
-        calculateResult();
-    }
-    operation = event.target.textContent;
-    previousInput = currentInput;
-    currentInput = '';
-}
-
-
-function calculateResult() {
-    let result;
-    const prev = parseFloat(previousInput);
-    const curr = parseFloat(currentInput);
-    if (isNaN(prev) || isNaN(curr)) return;
-
-    switch (operation) {
-        case '+':
-            result = prev + curr;
-            break;
-        case '-':
-            result = prev - curr;
-            break;
-        case '*':
-            result = prev * curr;
-            break;
-        case '/':
-            result = prev / curr;
-            break;
-        default:
-            return;
-    }
-    currentInput = result;
-    operation = null;
-    previousInput = '';
-    updateDisplay();
-}
-
-function clearDisplay() {
-    currentInput = '';
-    previousInput = '';
-    operation = null;
-    updateDisplay();
-}
-function clearLast(){
+function deleteLast(){
     display.value = display.value.slice(0,-1);
-    currentInput.value = display.value.slice(0,-1);
 }
-
-const numberButtons = document.querySelectorAll('.num');
-numberButtons.forEach(numberButtons => {
-    numberButtons.addEventListener('click', handleNumberClick);
-});
-
-
-const operationButtons = document.querySelectorAll('.operation');
-operationButtons.forEach(operationButtons => {
-    operationButtons.addEventListener('click', handleOperationClick);
-});
-
-
-document.querySelector('.res').addEventListener('click', clearDisplay);
-
-document.querySelector('.resu').addEventListener('click', calculateResult);
-
-document.querySelector('.del').addEventListener('click', clearLast);
+function calculate(){
+    try{
+        display.value = eval(display.value);
+    }
+    catch{
+        display.value = "ERROR";
+    }
+}
