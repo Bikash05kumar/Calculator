@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculater</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="sty.css">
 </head>
 <body>
     <div class="container">
@@ -13,26 +13,26 @@
         <!-- <div class="display"></div> -->
         <div class="gap"></div>
         <div class="keybord">
-            <div class="div1 num dig">7</div>
-            <div class="div2 num dig">8</div>
-            <div class="div3 num dig">9</div>
-            <div class="div4 del">DEL</div>
-            <div class="div5 num dig">4</div>
-            <div class="div6 num dig">5</div>
-            <div class="div7 num dig">6</div>
-            <div class="div8 num operation">+</div>
-            <div class="div9 num dig">1</div>
-            <div class="div10 num dig">2</div>
-            <div class="div11 num dig">3</div>
-            <div class="div12 num operation">-</div>
-            <div class="div13 num">.</div>
-            <div class="div14 num dig">0</div>
-            <div class="div15 num operation">/</div>
-            <div class="div16 num operation">*</div>
-            <div class="div17 num res">RESET</div>
-            <div class="div18 num resu">=</div>
+            <div onclick="appendToDisplay('7')" class="div1 num dig">7</div>
+            <div onclick="appendToDisplay('8')" class="div2 num dig">8</div>
+            <div onclick="appendToDisplay('9')" class="div3 num dig">9</div>
+            <div onclick="deleteLast()" class="div4 del">DEL</div>
+            <div onclick="appendToDisplay('4')" class="div5 num dig">4</div>
+            <div onclick="appendToDisplay('5')" class="div6 num dig">5</div>
+            <div onclick="appendToDisplay('6')" class="div7 num dig">6</div>
+            <div onclick="appendToDisplay('+')" class="div8 num operation">+</div>
+            <div onclick="appendToDisplay('1')" class="div9 num dig">1</div>
+            <div onclick="appendToDisplay('2')" class="div10 num dig">2</div>
+            <div onclick="appendToDisplay('3')" class="div11 num dig">3</div>
+            <div onclick="appendToDisplay('-')" class="div12 num operation">-</div>
+            <div onclick="appendToDisplay('.')" class="div13 num">.</div>
+            <div onclick="appendToDisplay('0')" class="div14 num dig">0</div>
+            <div onclick="appendToDisplay('/')" class="div15 num operation">/</div>
+            <div onclick="appendToDisplay('*')" class="div16 num operation">*</div>
+            <div onclick="clearDisplay()" class="div17 num res">RESET</div>
+            <div onclick="calculate()" class="div18 num resu">=</div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scr.js"></script>
 </body>
 </html>
