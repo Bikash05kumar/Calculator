@@ -1,23 +1,4 @@
 let btn = document.querySelectorAll('.num');
-// let dis = document.querySelector('.display');
-// let del = document.querySelector('.del');
-// let res = document.querySelector('.res');
-// let fin = document.querySelector('.fin');
-// let store = "";
-// btn.forEach(btn =>{
-//     btn.addEventListener('click',(e) =>{
-//         console.log("Hellp")
-//         if(e.target.innerHTML == "="){
-//             store = eval(store);
-//            console.log(dis.value = store);
-//         }
-//         // store = store+e.target.innerHTML;
-//     });
-// })
-
-
-
-
 let currentInput = '';
 let operation = null;
 let previousInput = '';
@@ -37,11 +18,9 @@ function handleNumberClick(event) {
 }
 
 function handleOperationClick(event) {
-    // updateDisplay();
+    
     if (currentInput === '') return;
     if (previousInput !== '') {
-        // updateDisplay();
-        // currentInput += event.target.textContent;
         calculateResult();
     }
     operation = event.target.textContent;
